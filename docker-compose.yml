@@ -1,9 +1,27 @@
 version: "3.8"
-services: 
-  movies: 
-  image: swapnajit1998/paymovies:latest
-    ports: 
+services:
+  movies:
+    image: swapnajit1998/movies
+    ports:
       - "81:80"
-  deploy: 
+  deploy:
     replicas: 2
+  train:
+    image: swapnajit1998/train
+    ports:
+      - "82:80"
+  deploy:
+    replicas: 2
+  dth:
+    image: swapnajit1998/dth
+    ports:
+      - "83:80"
+  deploy:
+    replicas: 2
+  recharge:
+    image: swapnajit1998/recharge
+    ports:
+      - "84:80"
+  deploy:
+    replicas: 2   
 
